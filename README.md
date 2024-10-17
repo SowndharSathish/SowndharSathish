@@ -10,5 +10,11 @@ I am a passionate **Vue Developer** with 1 year of experience in building dynami
 - **Tailwind CSS**: Designing beautiful and responsive layouts with utility-first styling.
 - **CSS**: Crafting visually appealing styles and designs.
 
+  # 📊 GitHub Stats:
+
+![](https://github-readme-stats.vercel.app/api?username=SowndharSathish&theme=dark&hide_border=false&include_all_commits=false&count_private=false)
+
 I love collaborating on projects and continuously learning new technologies. Let’s connect!
+
+
 
