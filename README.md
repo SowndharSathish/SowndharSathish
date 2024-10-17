@@ -1,16 +1,14 @@
-## Hi there 👋
+# Hi there 👋
 
-<!--
-**SowndharSathish/SowndharSathish** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## About Me
 
-Here are some ideas to get you started:
+I am a passionate **Vue Developer** with 1 year of experience in building dynamic and responsive web applications. I enjoy creating user-friendly interfaces and am dedicated to delivering high-quality code.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### Technologies I Know:
+- **Vue.js**: Building interactive UIs and single-page applications.
+- **HTML5**: Structuring and presenting content on the web.
+- **Tailwind CSS**: Designing beautiful and responsive layouts with utility-first styling.
+- **CSS**: Crafting visually appealing styles and designs.
+
+I love collaborating on projects and continuously learning new technologies. Let’s connect!
+
