@@ -107,8 +107,8 @@
     <section id="home"
       class="h-full py-20 max-w-7xl mx-auto pt-20 text-sky-950 z-100 flex flex-col sm:flex-row justify-center items-start gap-x-2 gap-12 b p-5"
     >
-      <div class="flex flex-col gap-y-4 w-full">
-        <div class="w-full flex justify-start">
+      <div class="flex flex-col gap-y-1 sm:gap-y-4 w-full">
+        <div class="w-full flex justify-center sm:justify-start text-center sm:text-start">
           <img
             src="assets/HeroImage.png"
             class="w-40 h-40 object-contain rounded-full bg-[#0ea5e9] border-black border-4 justify-end items-end flex animate-slide-in-left"
@@ -116,19 +116,18 @@
           />
         </div>
         <h1
-          class="text-4xl lg:text-5xl font-bold mt-8 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 animate-slide-in-right"
+          class="text-xl lg:text-5xl font-bold mt-8 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 animate-slide-in-right"
         >
           Sowndharyan Sathish
         </h1>
-        <h2 class="text-xl lg:text-2xl text-gray-600 mt-4 animate-slide-in-top">
+        <h2 class="text-sm lg:text-2xl text-gray-600 mt-4 animate-slide-in-top">
           Software Engineer | FrontEnd Developer
         </h2>
         <h3
           class="text-base sm:text-sm md:text-md lg:text-lg text-gray-600 mt-4 animate-slide-in-left"
         >
           With expertise in cutting-edge technologies such as Vue, JavaScript,
-          VueX, Firebase and Linux. I deliver web solutions that are
-          <span class="text-blue-600" id="writing"></span>
+          VueX, Firebase and Linux. I deliver web solutions that are <span class="text-blue-600" id="writing"></span>
         </h3>
 
         <div class="flex gap-x-3">
@@ -312,7 +311,7 @@
             <div class="w-24 h-1 bg-sky-500 mx-auto mt-4"></div>
 
             <!-- Inner Section -->
-             <section class="flex flex-col sm:flex-row mt-10 items-center justify-center gap-x-5">
+             <section class="flex flex-col sm:flex-row mt-10 items-center justify-center gap-5">
               <div class="flex flex-col sm:flex-row justify-start items-start gap-10 sm:w-[40%] sm:min-h-[80%] border shadow-xl p-5 rounded-xl">
                 <img src="./assets/agt-logo.webp" class="h-10 w-10 object-contain" alt="">
                 <div class="flex flex-col gap-2">
@@ -503,19 +502,6 @@
 
   <script>
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const successMessage = document.getElementById("success-message");
-    successMessage.style.display = "block";
-
-    setTimeout(function() {
-      successMessage.style.display = "none";
-    }, 3000);
-
-    this.submit();
-  });
-
 
   function toggleMenu() {
   const menu = document.getElementById("mobile-nav");
@@ -551,39 +537,39 @@ function closeMenu() {
     };
 
     const texts = [
-      "highly efficient.",
-      "scalable.",
-      "secure.",
-      "innovative.",
-      "user-friendly.",
-    ];
+    "highly efficient.",
+    "scalable.",
+    "secure.",
+    "innovative.",
+    "user-friendly."
+  ];
 
-    let textIndex = 0;
-    let letterIndex = 0;
+  let textIndex = 0;
+  let letterIndex = 0;
 
-    function typeText() {
-      const writingElement = document.getElementById("writing");
+  function typeText() {
+    const writingElement = document.getElementById("writing");
 
-      const currentText = texts[textIndex];
+    const currentText = texts[textIndex];
 
-      writingElement.textContent = currentText.substring(0, letterIndex);
+    writingElement.textContent = currentText.substring(0, letterIndex);
 
-      if (letterIndex < currentText.length) {
-        letterIndex++;
-        setTimeout(typeText, 100);
-      } else {
-        setTimeout(() => {
-          letterIndex = 0;
-          textIndex++;
-
-          if (textIndex >= texts.length) {
-            textIndex = 0;
-          }
-          typeText();
-        }, 1000);
-      }
+    if (letterIndex < currentText.length) {
+      letterIndex++; 
+      setTimeout(typeText, 100);
+    } else {
+      setTimeout(() => {
+        letterIndex = 0;
+        textIndex++;
+        if (textIndex >= texts.length) {
+          textIndex = 0;
+        }
+        
+        typeText();
+      }, 1000);
     }
-    typeText();
+  }
+  window.onload = typeText;
   </script>
 
   <style>
