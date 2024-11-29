@@ -310,6 +310,7 @@
                   <p class="bg-slate-100 rounded-full text-sm w-auto p-1 px-3 hover:bg-sky-100 hover:text-sky-500">CSS3</p>
                   <p class="bg-slate-100 rounded-full text-sm w-auto p-1 px-3 hover:bg-sky-100 hover:text-sky-500">TailwindCSS</p>
                   <p class="bg-slate-100 rounded-full text-sm w-auto p-1 px-3 hover:bg-sky-100 hover:text-sky-500">JavaScript</p>
+                  <p class="bg-slate-100 rounded-full text-sm w-auto p-1 px-3 hover:bg-sky-100 hover:text-sky-500">Formspree</p>
                   <p class="bg-slate-100 rounded-full text-sm w-auto p-1 px-3 hover:bg-sky-100 hover:text-sky-500">GitHub</p>
                 </div>
               </div>
@@ -478,23 +479,28 @@
                 <p class="text-gray-700 text-sm sm:text-lg">Please fill out the form below, and I'll get back to you as soon as possible!</p>
               </div>
               <hr>
-              <form class="flex flex-col gap-5">
+              <form action="https://formspree.io/f/xanyprzl" method="POST" class="flex flex-col gap-5">
                 <div class="flex flex-col items-start gap-1 sm:gap-3"> 
                   <h1 class="font-semibold">Name</h1>
-                  <input type="text" placeholder="Enter Your Name Here!" required class="border rounded-md p-2 w-full">
+                  <input type="text" name="name" placeholder="Enter Your Name Here!" required class="border rounded-md p-2 w-full">
+                </div>
+
+                <div class="flex flex-col items-start gap-1 sm:gap-3"> 
+                  <h1 class="font-semibold">Email</h1>
+                  <input type="email" name="email" placeholder="Enter Your Mail Here!" required class="border rounded-md p-2 w-full">
                 </div>
 
                 <div class="flex flex-col items-start gap-1 sm:gap-3">
                   <h1 class="font-semibold">Title</h1>
-                  <input type="text" placeholder="Give Some Title!" required class="border rounded-md p-2 w-full">
+                  <input type="text" name="title" placeholder="Give Some Title!" required class="border rounded-md p-2 w-full">
                 </div>
 
                 <div class="flex flex-col items-start gap-1 sm:gap-3">
-                  <h1 class="font-semibold">Title</h1>
+                  <h1 class="font-semibold">Message</h1>
                  <textarea name="" placeholder="Your message goes here" required class="border rounded-md p-2 w-full" id=""></textarea>
                 </div>
 
-                <button type="submit" class="border rounded-md p-1 font-semibold bg-sky-400 text-white">Send a Response</button>
+                <button type="submit" name="message" class="border rounded-md p-1 font-semibold bg-sky-400 text-white">Send a Response</button>
 
               </form>
             </div>
@@ -504,9 +510,28 @@
 
        <!-- Footer Section -->
        <p class="mt-10 flex justify-center items-center gap-x-2 bottom-2 text-sm"><span class="text-xl">&copy;</span> 2024 Sowndharyan Sathish, All rights reserved.</p>
+
+       <div id="success-message" style="display:none; text-align:center; background-color: #4CAF50; color: white; padding: 10px; margin-top: 10px;">
+        Thank you for your submission!
+      </div>
   </body>
 
   <script>
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const successMessage = document.getElementById("success-message");
+    successMessage.style.display = "block";
+
+    setTimeout(function() {
+      successMessage.style.display = "none";
+    }, 3000);
+
+    this.submit();
+  });
+
+
     function toggleMenu() {
       const menu = document.getElementById("mobile-nav");
 
