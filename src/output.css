@@ -745,12 +745,12 @@ video {
   height: auto;
 }
 
-.max-h-\[60\%\] {
-  max-height: 60%;
+.h-screen {
+  height: 100vh;
 }
 
-.min-h-\[1200px\] {
-  min-height: 1200px;
+.max-h-\[60\%\] {
+  max-height: 60%;
 }
 
 .min-h-screen {
@@ -866,7 +866,7 @@ video {
 }
 
 .animate-slide-in-bottom {
-  animation: slide-in-bottom 0.5s ease-out;
+  animation: slide-in-bottom 0.5s ease-in;
 }
 
 @keyframes slide-in-left {
@@ -1097,11 +1097,6 @@ video {
 .bg-green-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1));
-}
-
-.bg-red-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1));
 }
 
 .bg-sky-100 {

@@ -7,5 +7,8 @@
   "scripts": {
     "build": "postcss src/input.css -o src/output.css",
     "watch": "postcss src/input.css -o src/output.css --watch"
+  },
+  "dependencies": {
+    "aos": "^2.3.4"
   }
 }
