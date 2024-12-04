@@ -33,7 +33,7 @@
   <body class="font-roboto">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- NavBar Section -->
-    <section class="fixed top-0 left-0 w-full z-50 bg-gray-100" id="navbar">
+    <section class="fixed top-0 left-0 w-screen z-50 bg-gray-100" id="navbar">
       <div
         class="flex justify-between p-4 items-center max-w-7xl mx-auto transition-shadow duration-300"
       >
@@ -1123,13 +1123,16 @@
     }
 
     window.onscroll = function () {
-      const navbar = document.getElementById("navbar");
-      if (window.scrollY > 10) {
-        navbar.classList.add("shadow-lg");
-      } else {
-        navbar.classList.remove("shadow-lg");
-      }
-    };
+  const navbar = document.getElementById("navbar");
+  const aboutSection = document.getElementById("about");
+  const aboutPosition = aboutSection.getBoundingClientRect().top;
+
+  if (window.scrollY > aboutPosition) {
+    navbar.classList.add("shadow-lg");
+  } else {
+    navbar.classList.remove("shadow-lg");
+  }
+};
 
     const texts = [
       "highly efficient.",
