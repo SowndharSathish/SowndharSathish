@@ -33,7 +33,7 @@
   <body class="font-roboto">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- NavBar Section -->
-    <section class="fixed top-0 left-0 w-screen z-50 bg-gray-100" id="navbar">
+    <section class="fixed top-0 left-0 w-screen z-50 bg-gray-100" data-aos="fade-down" id="navbar">
       <div
         class="flex justify-between p-4 items-center max-w-7xl mx-auto transition-shadow duration-300"
       >
@@ -102,7 +102,7 @@
       <!-- Mobile Menu Dropdown (initially hidden) -->
       <div
         id="mobile-nav"
-        class="fixed inset-0 left-0 bg-gray-800 bg-opacity-70 transform -translate-x-full transition-transform duration-300 md:hidden"
+        class="fixed top-0 left-0 w-64 h-full bg-gray-800 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 hidden"
       >
         <div class="flex flex-col items-center p-4">
           <a
@@ -182,7 +182,7 @@
           <span class="text-blue-600" id="writing"></span>
         </h3>
 
-        <div class="flex gap-x-3">
+        <div class="flex gap-x-3 mt-5">
           <a href="https://github.com/SowndharSathish" target="_blank"
             ><img
               src="./assets/github.png"
@@ -1100,12 +1100,10 @@
 
     function toggleMenu() {
       const menu = document.getElementById("mobile-nav");
-
+        
       if (menu.classList.contains("hidden")) {
         menu.classList.remove("hidden");
-        setTimeout(() => {
-          menu.classList.remove("-translate-x-full");
-        }, 10);
+        menu.classList.remove("-translate-x-full");
       } else {
         menu.classList.add("-translate-x-full");
         setTimeout(() => {
@@ -1122,17 +1120,26 @@
       }, 300);
     }
 
-    window.onscroll = function () {
-  const navbar = document.getElementById("navbar");
-  const aboutSection = document.getElementById("about");
-  const aboutPosition = aboutSection.getBoundingClientRect().top;
+    let navbar = document.getElementById("navbar");
+    let aboutSection = document.getElementById("about");
 
-  if (window.scrollY > aboutPosition) {
-    navbar.classList.add("shadow-lg");
-  } else {
-    navbar.classList.remove("shadow-lg");
-  }
-};
+    function handleNavbarShadow() {
+      let scrollY = window.scrollY;
+      let aboutSectionTop = aboutSection.offsetTop;
+      let aboutSectionHeight = aboutSection.offsetHeight;
+    
+      let threshold = aboutSectionTop + (aboutSectionHeight * 0.1); 
+    
+      if (scrollY > threshold) {
+        navbar.classList.add("shadow-lg");
+      } else {
+        navbar.classList.remove("shadow-lg");
+      }
+    }
+
+    window.onscroll = function () {
+      handleNavbarShadow();
+    };
 
     const texts = [
       "highly efficient.",
