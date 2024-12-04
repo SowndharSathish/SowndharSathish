@@ -102,7 +102,7 @@
       <!-- Mobile Menu Dropdown (initially hidden) -->
       <div
         id="mobile-nav"
-        class="fixed top-0 left-0 w-64 h-full bg-gray-800 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 hidden"
+        class="fixed top-0 left-0 w-64 h-screen bg-gray-800 bg-opacity-100 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 hidden"
       >
         <div class="flex flex-col items-center p-4">
           <a
@@ -1178,20 +1178,6 @@
   </script>
 
   <style>
-    #mobile-nav {
-      top: 0;
-      right: 0;
-      width: 250px;
-      height: 100%;
-      background-color: #1f2937; /* Dark background for mobile menu */
-      padding-top: 5rem; /* Space out links from the top */
-    }
-
-    #mobile-nav a {
-      text-decoration: none;
-      font-size: 1.25rem;
-      padding: 10px 0;
-    }
 
     #hamburger-menu button {
       background: none;
